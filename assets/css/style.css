@@ -1,0 +1,20 @@
+body {
+    background-image: url("https://i.ytimg.com/vi/6MPJGaBHoOM/hqdefault.jpg");
+}
+h4 {
+    color: #FEDC32;
+    font-family: 'Passion One', cursive;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.sith {
+    border: 10px red solid;
+}
+
+.jedi {
+    border: 10px blue solid;
+}
+

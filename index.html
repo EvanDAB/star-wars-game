@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Wars Game</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Passion+One" >
+</head>
+<body>
+    <div id="before-select">
+        <img class="character jedi" data-name="Rey"          data-hp="120" data-attack="6" data-counter="6" src="assets/images/rey.jpg" alt="Rey">
+        <img class="character jedi" data-name="Mace Windu"   data-hp="100" data-attack="6" data-counter="6" src="assets/images/mace-windu.jpg" alt="Mace Windu">
+        <img class="character sith" data-name="Kylo Ren"     data-hp="150" data-attack="6" data-counter="6" src="assets/images/kylo-ren.jpg" alt="Kylo Ren">
+        <img class="character sith" data-name="StarKiller"   data-hp="180" data-attack="6" data-counter="6" src="assets/images/starkiller.jpg" alt="StarKiller">
+    </div>
+    <div class="empty">
+        <h4>Your Character</h4>
+        <div class="character-selected"></div>
+    </div>
+    <div class="empty">
+        <h4>Enemies Available To Attack</h4>
+        <div class="enemies"></div>
+        <h4>Fight Section</h4>
+        <button id="attack-button">Attack</button>
+        <h4>Defender</h4>
+        <div id="defender"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+</body>
+</html>
