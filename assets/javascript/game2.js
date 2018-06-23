@@ -5,15 +5,16 @@ $(document).ready(function () {
     dispE = $('.enemies');
     image = $('.character');
     attackPower = 0;
-    rey = $('#rey').data('hp');
+    rey = $('#rey').attr('data-hp');
     $('#rey').text(rey);
-    mace = $('#mace-windu').data('hp');
+    console.log(rey);
+    mace = $('#mace-windu').attr('data-hp');
     $('#mace-windu').text(mace);
-    kylo = $('#kylo-ren').data('hp');
+    kylo = $('#kylo-ren').attr('data-hp');
     $('#kylo-ren').text(kylo);
-    star = $('#starKiller').data('hp');
+    star = $('#starKiller').attr('data-hp');
     $('#starKiller').text(star);
-    // playerH = $('.player').contents().filter('p').data('hp'); -doesnt do anything to solve the problem
+    // playerH = $('.player').contents().filter('p').attr('data-hp'); -doesnt do anything to solve the problem
 })
 
 
@@ -22,7 +23,7 @@ $(document).on('click','.character', function assignCharacter () {
     player.removeClass('character');
     player.addClass('player');
     player.attr('data-hp');
-    playerH = $('.player').contents().filter('p').data('hp');
+    playerH = $('.player').contents().filter('p').attr('data-hp');
     
     if($('.character-selected').text() == '') $('.character-selected').append(player);
     if (dispE.text() == '') {
@@ -40,20 +41,20 @@ $(document).on('click', '.enemy', function assignDefender() {
     if ($("#defender").text() == '') {
         $("#defender").append(defender);
     }  
-    defenderH = $('.defender').contents().filter('p').data('hp');
-    playerA = $('.player').contents().filter('p').data('attack');
-    defenderC = $('.defender').contents().filter('p').data('counter');
-    defenderN = $('.defender').contents().filter('p').data('name');
+    defenderH = $('.defender').contents().filter('p').attr('data-hp');
+    playerA = $('.player').contents().filter('p').attr('data-attack');
+    defenderC = $('.defender').contents().filter('p').attr('data-counter');
+    defenderN = $('.defender').contents().filter('p').attr('data-name');
     
 });
 
 $(document).on('click', '#attack-button', function (){
     //player and defender health
-    playerH = playerH - defenderC;
+    playerH = parseInt(playerH) - parseInt(defenderC);
     
     // $('.player').contents().filter('p').attr('data-hp', playerH);
-    attackPower = attackPower + playerA;
-    defenderH = defenderH - attackPower;
+    attackPower = parseInt(attackPower) + parseInt(playerA);
+    defenderH = parseInt(defenderH) - parseInt(attackPower);
      
     fightProgress = $('#fightProgress');
     fightProgress.html(
@@ -69,7 +70,7 @@ $(document).on('click', '#attack-button', function (){
              "Who's Next?"
             );
         }
-        
+        $('.player').contents().filter('p').attr('data-hp', playerH);
         $('.player').contents().filter('p').text(playerH);
         $('.defender').contents().filter('p').text(defenderH);  
     //now make sure player health doubles everytime you click it
