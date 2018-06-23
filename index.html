@@ -11,10 +11,22 @@
 </head>
 <body>
     <div id="before-select">
-        <img class="character jedi" data-name="Rey"          data-hp="120" data-attack="6" data-counter="6" src="assets/images/rey.jpg" alt="Rey">
-        <img class="character jedi" data-name="Mace Windu"   data-hp="100" data-attack="6" data-counter="6" src="assets/images/mace-windu.jpg" alt="Mace Windu">
-        <img class="character sith" data-name="Kylo Ren"     data-hp="150" data-attack="6" data-counter="6" src="assets/images/kylo-ren.jpg" alt="Kylo Ren">
-        <img class="character sith" data-name="StarKiller"   data-hp="180" data-attack="6" data-counter="6" src="assets/images/starkiller.jpg" alt="StarKiller">
+        <div class="imgContainer character jedi"   >
+            <img  src="assets/images/rey.jpg" alt="Rey">
+            <p class="health" id="rey" data-name="Rey" data-hp="120" data-attack="6" data-counter="6"></p>
+        </div>
+        <div class="imgContainer character jedi"    >
+            <img src="assets/images/mace-windu.jpg" alt="Mace Windu">
+            <p class="health" id="mace-windu" data-name="Mace Windu" data-hp="100" data-attack="6" data-counter="6"></p>
+        </div>
+        <div class="imgContainer character sith"    >
+            <img src="assets/images/kylo-ren.jpg" alt="Kylo Ren">
+            <p class="health" id="kylo-ren" data-name="Kylo Ren" data-hp="150" data-attack="6" data-counter="6"></p>
+        </div>
+        <div class="imgContainer character sith" >
+            <img  src="assets/images/starkiller.jpg" alt="StarKiller">
+            <p class="health" id="starKiller" data-name="Starkiller" data-hp="180" data-attack="6" data-counter="6"></p>
+        </div>
     </div>
     <div class="empty">
         <h4>Your Character</h4>
@@ -23,12 +35,15 @@
     <div class="empty">
         <h4>Enemies Available To Attack</h4>
         <div class="enemies"></div>
+    </div>
+    <div class="empty">
         <h4>Fight Section</h4>
         <button id="attack-button">Attack</button>
         <h4>Defender</h4>
         <div id="defender"></div>
+        <div id="fightProgress"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/game2.js"></script>
 </body>
 </html>

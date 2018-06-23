@@ -13,7 +13,7 @@ $(document).ready(function () {
     $('#kylo-ren').text(kylo);
     star = $('#starKiller').data('hp');
     $('#starKiller').text(star);
-    playerH = $('.player').contents().filter('p').data('hp'); 
+    // playerH = $('.player').contents().filter('p').data('hp'); -doesnt do anything to solve the problem
 })
 
 
@@ -22,7 +22,7 @@ $(document).on('click','.character', function assignCharacter () {
     player.removeClass('character');
     player.addClass('player');
     player.attr('data-hp');
-    // playerH = $('.player').contents().filter('p').data('hp'); //doesnt do anything to solve the problem
+    playerH = $('.player').contents().filter('p').data('hp');
     
     if($('.character-selected').text() == '') $('.character-selected').append(player);
     if (dispE.text() == '') {
@@ -49,11 +49,9 @@ $(document).on('click', '.enemy', function assignDefender() {
 
 $(document).on('click', '#attack-button', function (){
     //player and defender health
-    // $('.player').contents().filter('p').attr('data-hp', function() {return playerH});
-    $('.player').contents().filter('p').text(playerH);
     playerH = playerH - defenderC;
     
-    
+    // $('.player').contents().filter('p').attr('data-hp', playerH);
     attackPower = attackPower + playerA;
     defenderH = defenderH - attackPower;
      
@@ -71,9 +69,12 @@ $(document).on('click', '#attack-button', function (){
              "Who's Next?"
             );
         }
-
         
+        $('.player').contents().filter('p').text(playerH);
         $('.defender').contents().filter('p').text(defenderH);  
     //now make sure player health doubles everytime you click it
 
 });
+
+
+
